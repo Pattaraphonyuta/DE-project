@@ -10,7 +10,7 @@ export default function LogsPage() {
 
   return (
     <div className="container">
-      <h1>Search Logs</h1>
+      <h1>Search for log</h1>
       {logs.length === 0 ? (
         <p>No search history yet.</p>
       ) : (
