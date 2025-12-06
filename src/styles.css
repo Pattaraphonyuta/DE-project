@@ -6,7 +6,7 @@ body {
 }
 
 nav {
-  background-color: #C7E4D9; /* เขียวอ่อน pastel ธรรมชาติ */
+  background-color: #a7c9bd; /* เขียวอ่อน pastel ธรรมชาติ */
   color: #333333;
   padding: 15px;
   text-align: center;
@@ -28,7 +28,7 @@ nav a:hover {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #E6F3EE; /* เขียวอ่อนอ่อนสำหรับกล่อง */
+  background-color: #d7f1e6; /* เขียวอ่อนอ่อนสำหรับกล่อง */
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -58,12 +58,186 @@ button:hover {
   background-color: #8CCBA7; /* เขียวเข้มเล็กน้อย */
 }
 
+.home-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* SEARCH */
+.search-box {
+  background: #d7f1e6;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.search-input-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search-input-row input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #888;
+}
+
+.search-input-row button {
+  padding: 10px 20px;
+  border: none;
+  background: #2f5d50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* DISPLAY BOX */
+.display-box {
+  background: #eff3f1;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 6px solid #6bb89c;
+}
+
+/* WEATHER INFO */
+.weather-info {
+  margin-bottom: 20px;
+}
+
+.weather-info h2 {
+  color: #2f5d50;
+}
+
+/* GRAPH */
+.graph-section .graph-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.graph-section .day {
+  width: 50px;
+}
+
 .bar {
-  height: 20px;
-  background-color: #A9D7C6; /* เขียวอ่อน */
-  color: #333333;
-  text-align: right;
-  padding-right: 5px;
-  border-radius: 5px;
-  margin-bottom: 5px;
+  background: #95cadd;
+  color: white;
+  padding: 4px;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+.logs-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* กล่องบน */
+.log-header-box {
+  background-color: #d7f1e6;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* จัด input ให้อยู่กลาง */
+.search-center-input {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/* Log card */
+.log-card {
+  background: #eff3f1;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-left: 6px solid #6bb89c;
+}
+
+/* Layout ของข้อมูล */
+.log-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.log-item {
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 10px;
+  flex: 1 1 calc(25% - 12px);
+  min-width: 150px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+.log-label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+/* Container */
+.tools-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+/* Header */
+.tools-header-box {
+  background-color: #d7f1e6;
+  text-align: center;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tools-header-box .small-text {
+  font-size: 14px;
+  color: #555;
+}
+
+/* List layout */
+.tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Tool card */
+.tool-card {
+  background: #f7f7f7;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-left: 6px solid #6bb89c;
+}
+
+.tool-card h4 {
+  margin: 0 0 6px 0;
+  color: #2f5d50; 
+}
+
+.tool-card p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
+.search-center-input {
+  width: 250px;
+  margin: 0 auto 15px auto;
+  text-align: center;
 }

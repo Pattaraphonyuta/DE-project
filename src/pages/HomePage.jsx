@@ -4,7 +4,6 @@ export default function HomePage() {
   const [city, setCity] = useState("");
   const [forecast, setForecast] = useState(null);
 
-  // ข้อมูลกราฟจำลอง (7 วัน)
   const graphData = [
     { day: "Mon", rain: 20 },
     { day: "Tue", rain: 50 },
@@ -17,6 +16,7 @@ export default function HomePage() {
 
   const handleSearch = () => {
     if (!city) return;
+
     const data = {
       city,
       temp: (20 + Math.random() * 10).toFixed(1),
@@ -24,6 +24,7 @@ export default function HomePage() {
       humidity: Math.floor(Math.random() * 80),
       wind: (Math.random() * 10).toFixed(1),
     };
+
     setForecast(data);
 
     const logs = JSON.parse(localStorage.getItem("searchLogs")) || [];
@@ -31,43 +32,56 @@ export default function HomePage() {
   };
 
   return (
-    <div className="container">
-      {/* ข้อความต้อนรับ */}
-      <h2>Welcome to Rain prediction project</h2>
-      
+    <div className="home-container">
 
-      {/* Search Box */}
-      <div style={{ marginBottom: "20px" }}>
-        <input
-          type="text"
-          placeholder="Enter city"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button onClick={handleSearch}>Search</button>
-      </div>
+      {/* SEARCH BOX */}
+      <div className="search-box">
+        <h2 className="text-center">Rain Prediction Project</h2>
 
-      {/* Weather Info */}
-      {forecast && (
-        <div style={{ marginBottom: "20px" }}>
-          <h2>{forecast.city}</h2>
-          <p>Temperature: {forecast.temp}°C</p>
-          <p>Rain Chance: {forecast.rain}%</p>
-          <p>Humidity: {forecast.humidity}%</p>
-          <p>Wind: {forecast.wind} m/s</p>
+        <div className="search-input-row">
+          <input
+            type="text"
+            placeholder="Enter city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button onClick={handleSearch}>Search</button>
         </div>
-      )}
-
-      {/* Graph Section */}
-      <div>
-        <h3>Rain Probability Next 7 Days</h3>
-        {graphData.map((d, i) => (
-          <div key={i}>
-            <span>{d.day}: </span>
-            <div className="bar" style={{ width: `${d.rain}%` }}>{d.rain}%</div>
-          </div>
-        ))}
       </div>
+
+      {/* DISPLAY BOX */}
+      <div className="display-box">
+
+        {/* Weather Info */}
+        {forecast && (
+          <div className="weather-info">
+            <h2>{forecast.city}</h2>
+            <p>Temperature: {forecast.temp}°C</p>
+            <p>Rain Chance: {forecast.rain}%</p>
+            <p>Humidity: {forecast.humidity}%</p>
+            <p>Wind: {forecast.wind} m/s</p>
+          </div>
+        )}
+
+        {/* Graph */}
+        <div className="graph-section">
+          <h3>Rain Probability Next 7 Days</h3>
+
+          {graphData.map((d, i) => (
+            <div className="graph-row" key={i}>
+              <span className="day">{d.day}</span>
+
+              <div
+                className="bar"
+                style={{ width: `${d.rain}%` }}
+              >
+                {d.rain}%
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
   );
 }
